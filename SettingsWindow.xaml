@@ -1,0 +1,47 @@
+<Window x:Class="SpotiPop.SettingsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="SpotiPop settings" Width="420" SizeToContent="Height" ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen" Background="#111113" Foreground="White"
+        FontFamily="{StaticResource UiFont}" TextOptions.TextFormattingMode="Ideal" UseLayoutRounding="True">
+
+    <Window.Resources>
+        <Style x:Key="Label" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="Foreground" Value="#99FFFFFF"/>
+            <Setter Property="Margin" Value="0,18,0,8"/>
+        </Style>
+    </Window.Resources>
+
+    <StackPanel Margin="28,24,28,28">
+        <TextBlock Text="Settings" FontSize="22" FontFamily="{StaticResource UiFontMedium}"/>
+
+        <CheckBox x:Name="PopupBox" Style="{StaticResource SwitchCheck}" Margin="0,22,0,0"
+                  Content="Popup when the song changes" Click="Changed"/>
+        <CheckBox x:Name="IslandBox" Style="{StaticResource SwitchCheck}" Margin="0,16,0,0"
+                  Content="Always-on mini player" Click="Changed"/>
+
+        <StackPanel x:Name="IslandOptions">
+            <TextBlock Style="{StaticResource Label}" Text="POSITION"/>
+            <WrapPanel>
+                <RadioButton x:Name="EdgeTop" GroupName="Edge" Style="{StaticResource ChipRadio}" Content="Top" Click="Changed"/>
+                <RadioButton x:Name="EdgeBottom" GroupName="Edge" Style="{StaticResource ChipRadio}" Content="Bottom" Click="Changed"/>
+            </WrapPanel>
+
+            <TextBlock Style="{StaticResource Label}" Text="SCREEN"/>
+            <WrapPanel x:Name="MonitorPanel"/>
+
+            <TextBlock Style="{StaticResource Label}" Text="CONTROLS"/>
+            <WrapPanel>
+                <RadioButton x:Name="ControlsBelow" GroupName="Controls" Style="{StaticResource ChipRadio}" Content="Below the song" Click="Changed"/>
+                <RadioButton x:Name="ControlsSide" GroupName="Controls" Style="{StaticResource ChipRadio}" Content="At the side" Click="Changed"/>
+            </WrapPanel>
+
+            <TextBlock Style="{StaticResource Label}" Text="SHOW CONTROLS"/>
+            <WrapPanel>
+                <RadioButton x:Name="ShownNear" GroupName="Shown" Style="{StaticResource ChipRadio}" Content="When the mouse is near" Click="Changed"/>
+                <RadioButton x:Name="ShownAlways" GroupName="Shown" Style="{StaticResource ChipRadio}" Content="Always" Click="Changed"/>
+            </WrapPanel>
+        </StackPanel>
+    </StackPanel>
+</Window>
