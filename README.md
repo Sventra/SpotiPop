@@ -42,7 +42,7 @@
   - Scroll over the pill to change the volume.
 - **Works with Spotify and [Spotifast](https://spotifast.rocks/)** — and follows whichever one is currently playing.
 - **Stays out of your way** — it hides itself while a game, video or presentation is fullscreen (including borderless-window games), and never steals focus.
-- **Light on resources** — event-driven (no constant polling when idle), software-rendered, trims its own memory. Around 15–20 MB resident and ~0% CPU when idle on my machine.
+- **Light on resources** — event-driven (no constant polling when idle), GPU-rendered, trims its own memory. Around 15–20 MB resident and ~0% CPU when idle on my machine.
 - **Native** — C# / WPF on .NET 9. No Electron, no browser engine, no account login, no API keys.
 
 ## Requirements

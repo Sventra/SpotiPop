@@ -3,7 +3,6 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Threading;
 using System.Windows;
-using System.Windows.Interop;
 using Microsoft.Win32;
 using Forms = System.Windows.Forms;
 
@@ -20,9 +19,6 @@ public partial class App : Application
     protected override async void OnStartup(StartupEventArgs e)
     {
         base.OnStartup(e);
-
-        // The windows are small and mostly idle: skip the GPU pipeline (and its driver memory) entirely.
-        System.Windows.Media.RenderOptions.ProcessRenderMode = RenderMode.SoftwareOnly;
 
         _singleInstance = new Mutex(true, "SpotiPop.SingleInstance", out var isFirst);
         if (!isFirst)
